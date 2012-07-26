@@ -18,7 +18,7 @@ mysql -u$musername -p$mpassword -e "grant all on *.* to '$susername'@'$shost' id
 cp /etc/my.cnf /tmp/my.cnf
 echo "Modifying/Inserting required properties"
 
-findAndReplace "bind-address" "$mhost"
+findAndReplace "bind-address" "0.0.0.0"
 findAndReplace "log_bin" "\/var\/log\/mysql\/mysql-bin.log"
 findAndReplace "server-id" "$masterServerId"
 findAndReplace "innodb_flush_log_at_trx_commit" "1"

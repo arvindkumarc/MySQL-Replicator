@@ -6,7 +6,7 @@
 
 echo "Modifying/Inserting required properties"
 cp /etc/my.cnf /tmp/my.cnf
-findAndReplace "bind-address" "$shost"
+findAndReplace "bind-address" "0.0.0.0"
 findAndReplace "log_bin" "\/var\/log\/mysql\/mysql-bin.log"
 findAndReplace "server-id" "$slaveServerId"
 
